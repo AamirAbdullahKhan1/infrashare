@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <header className="flex border-b bg-white font-sans min-h-[70px] tracking-wide relative z-50 shadow-md">
-      <div className="flex flex-wrap items-center justify-between px-6 py-3 w-full">
+      <div className="flex flex-wrap items-center justify-between px-5 py-3 w-full sm:gap-2">
         {/* Logo */}
         <a href="javascript:void(0)">
           <p className="text-2xl font-poppins font-semibold text-slate-900">INFRASHARE</p>
