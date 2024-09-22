@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <header className="flex border-b bg-white font-sans min-h-[70px] tracking-wide relative z-50 shadow-md">
-      <div className="flex flex-wrap items-center justify-between px-5 py-3 w-full sm:gap-2">
+      <div className="flex flex-wrap items-center justify-between px-4 py-3 w-full">
         {/* Logo */}
         <a href="javascript:void(0)">
           <p className="text-2xl font-poppins font-semibold text-slate-900">INFRASHARE</p>
@@ -54,11 +54,11 @@ const Navbar = () => {
         </div>
 
         {/* Login / Signup buttons */}
-        <div className="flex items-center space-x-8">
+        <div className="flex items-center space-x-5">
           <button className="px-4 py-2 text-sm rounded-md font-semibold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-slate-700 hover:text-teal-400 hover:border-slate-700 font-poppins max-sm:hidden">
             Login
           </button>
-          <button className="px-4 py-2 text-sm rounded-md font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-slate-700 hover:text-teal-400 hover:border-slate-700 font-poppins">
+          <button className="px-4 py-2 text-sm rounded-md font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-slate-700 hover:text-teal-400 hover:border-slate-700 font-poppins max-sm:mx-1">
             Sign Up
           </button>
 
