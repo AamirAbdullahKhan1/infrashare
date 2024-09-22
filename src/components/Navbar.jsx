@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -12,12 +13,13 @@ const Navbar = () => {
       <div className="flex flex-wrap items-center justify-between px-4 py-3 w-full">
         {/* Logo */}
         <a href="javascript:void(0)">
-          <p className="text-2xl font-poppins font-semibold text-slate-900">INFRASHARE</p>
+          <p className="text-2xl font-poppins px-2 font-semibold text-slate-900">INFRASHARE</p>
         </a>
 
         {/* Navbar links for larger screens */}
+        
         <div className="hidden lg:flex lg:items-center lg:gap-x-10">
-          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase">Home</a>
+          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/'>Home</Link></a>
           
           {/* Resources Link with Dropdown */}
           <li className='group max-lg:border-b list-none max-lg:py-3 relative'>
@@ -54,12 +56,12 @@ const Navbar = () => {
         </div>
 
         {/* Login / Signup buttons */}
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-2">
           <button className="px-4 py-2 text-sm rounded-md font-semibold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-slate-700 hover:text-teal-400 hover:border-slate-700 font-poppins max-sm:hidden">
             Login
           </button>
           <button className="px-4 py-2 text-sm rounded-md font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-slate-700 hover:text-teal-400 hover:border-slate-700 font-poppins max-sm:mx-1">
-            Sign Up
+            <Link to='/register'>Sign Up</Link>
           </button>
 
           {/* Hamburger icon for smaller screens */}
