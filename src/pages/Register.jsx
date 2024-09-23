@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Register = () => {
   return (
-    <div className="flex flex-col justify-center font-[sans-serif] sm:h-screen p-4 bg-slate-50">
-      <div className="max-w-md w-full mx-auto shadow-xl rounded-2xl p-8 border-x-2 border-y-2 border-gray-500">
+    <div className="flex flex-col justify-center font-[sans-serif] sm:h-screen p-4 bg-gradient-to-tr from-amber-300 to-teal-100">
+      <div className="max-w-md w-full mx-auto shadow-xl rounded-2xl p-8 border-x-2 border-y-2 bg-slate-50 border-gray-500">
         <div className="text-center mb-12">
           <a href="javascript:void(0)">
         <h1 className='text-4xl font-semibold uppercase font-poppins'>InfraShare</h1>
