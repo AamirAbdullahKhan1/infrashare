@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Register = () => {
   return (
@@ -38,7 +39,7 @@ const Register = () => {
               Create an account
             </button>
           </div>
-          <p className="text-gray-800 text-sm mt-6 text-center">Already have an account? <a href="#" className="text-blue-600 font-semibold hover:underline ml-1">Login here</a></p>
+          <p className="text-gray-800 text-sm mt-6 text-center">Already have an account? <a href="#" className="text-blue-600 font-semibold hover:underline ml-1"><Link to='/login'>Login Here</Link></a></p>
         </form>
       </div>
     </div>

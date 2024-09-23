@@ -6,6 +6,8 @@ import Features from './components/Features'
 import Register from './pages/Register'
 import Footer from './components/Footer';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Contact from './pages/Contact';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,24 @@ const router = createBrowserRouter([
         <Home />
         <Features/>
         <Footer />
+      </>
+    ),
+  },
+  {
+    path: '/contact',
+    element: (
+      <>
+        <Navbar/>
+        <Contact/>
+        <Footer/>
+      </>
+    ),
+  },
+  {
+    path: '/login',
+    element: (
+      <>
+        <Login/>
       </>
     ),
   },
