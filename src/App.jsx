@@ -14,6 +14,7 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <Home />
+        <Features/>
         <Footer />
       </>
     ),
