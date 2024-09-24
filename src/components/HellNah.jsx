@@ -3,26 +3,30 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <header className="flex border-b bg-white font-sans min-h-[70px] tracking-wide relative z-50 shadow-md">
-      <div className="flex flex-wrap items-center justify-between px-4 py-3 w-full">
+      <div className="flex flex-wrap items-center justify-between px-6 py-3 gap-4 w-full">
         {/* Logo */}
         <a href="javascript:void(0)">
-          <p className="text-2xl font-poppins px-2 font-semibold text-slate-900">INFRASHARE</p>
+          <p className="text-2xl font-poppins font-semibold text-slate-900"><Link to='/'>INFRASHARE</Link></p>
         </a>
 
         {/* Navbar links for larger screens */}
-        
         <div className="hidden lg:flex lg:items-center lg:gap-x-10">
-          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/'>Home</Link></a>
+          <a href="javascript:void(0)" className="hover:text-blue-600 transition-colors duration-300 text-[16px] font-bold text-blue-600 block font-firesans uppercase"><Link to='/'>Home</Link></a>
           
           {/* Resources Link with Dropdown */}
-          <li className='group max-lg:border-b list-none max-lg:py-3 relative'>
+          <li className='group max-lg:border-b max-lg:py-3 relative list-none'>
             <a href='javascript:void(0)'
               className='hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-gray-600 text-[16px] font-bold lg:hover:fill-[#dc8c4f] block font-firesans uppercase'>
               Resources
@@ -37,7 +41,7 @@ const Navbar = () => {
 
             {/* Dropdown menu */}
             <ul
-              className='absolute shadow-lg bg-white space-y-3 lg:top-5 max-lg:top-8 -left-6 min-w-[250px] z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500 list-none'>
+              className='absolute shadow-lg bg-white space-y-3 lg:top-5 max-lg:top-8 -left-6 min-w-[250px] z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500'>
               <li className='border-b py-2 '><a href='javascript:void(0)'
                   className='hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins'>Equipments</a></li>
               <li className='border-b py-2 '>
@@ -52,15 +56,15 @@ const Navbar = () => {
           </li>
 
           <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase">About</a>
-          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase">Contact</a>
+          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/contact'>Contact</Link></a>
         </div>
 
         {/* Login / Signup buttons */}
         <div className="flex items-center space-x-2">
-          <button className="px-4 py-2 text-sm rounded-md font-semibold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-slate-700 hover:text-teal-400 hover:border-slate-700 font-poppins max-sm:hidden">
-            Login
+          <button className="px-4 py-2 text-sm rounded-lg font-semibold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-slate-700 hover:text-teal-400 hover:border-slate-700 font-dmsans max-sm:hidden">
+            <Link to='/login'>Login</Link>
           </button>
-          <button className="px-4 py-2 text-sm rounded-md font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-slate-700 hover:text-teal-400 hover:border-slate-700 font-poppins max-sm:mx-1">
+          <button className="px-4 py-2 text-sm rounded-lg font-bold text-white border-2 border-[#007bff] bg-[#007bff] transition-all ease-in-out duration-300 hover:bg-slate-700 hover:text-teal-400 hover:border-slate-700 font-dmsans">
             <Link to='/register'>Sign Up</Link>
           </button>
 
@@ -87,10 +91,32 @@ const Navbar = () => {
             </svg>
           </button>
           <ul className="space-y-6">
-            <li><a href="javascript:void(0)" className="hover:text-blue-600 text-[16px] font-bold text-blue-600 block font-firesans uppercase">Home</a></li>
-            <li><a href="javascript:void(0)" className="hover:text-gray-600 text-[16px] font-bold text-gray-600 block font-firesans uppercase">Resources</a></li>
+            <li><a href="javascript:void(0)" className="hover:text-blue-600 text-[16px] font-bold text-blue-600 block font-firesans uppercase"><Link to='/'>Home</Link></a></li>
+
+            {/* Resources with dropdown in sidebar */}
+            <li className="relative" onClick={toggleDropdown} onMouseEnter={toggleDropdown} onMouseLeave={() => setIsDropdownOpen(false)}>
+            <button className="hover:text-gray-600 text-[16px] font-bold text-gray-600 block font-firesans uppercase w-full text-left">
+              Resources
+              <svg
+                xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" className="ml-1 inline-block transition-all ease-in-out duration-300 hover:text-[#dc8c4f]"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                  data-name="16" data-original="#000000" />
+              </svg>
+            </button>
+            {isDropdownOpen && (
+              <ul className={`pl-4 space-y-3 mt-2 transition-all duration-500 ${isDropdownOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                <li><a href="javascript:void(0)" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Equipments</a></li>
+                <li><a href="javascript:void(0)" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Research Labs</a></li>
+                <li><a href="javascript:void(0)" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Incubation Centers</a></li>
+                <li><a href="javascript:void(0)" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Investment</a></li>
+              </ul>
+            )}
+          </li>
+
             <li><a href="javascript:void(0)" className="hover:text-gray-600 text-[16px] font-bold text-gray-600 block font-firesans uppercase">About</a></li>
-            <li><a href="javascript:void(0)" className="hover:text-gray-600 text-[16px] font-bold text-gray-600 block font-firesans uppercase">Contact</a></li>
+            <li><a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/contact'>Contact</Link></a></li>
           </ul>
         </div>
       </div>
