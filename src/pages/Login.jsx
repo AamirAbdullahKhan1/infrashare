@@ -13,6 +13,8 @@ const Login = () => {
             </h2>
             <p className="text-xl font-dmsans font-semibold mt-6 text-gray-800">Immerse yourself in a hassle-free login journey with our intuitively designed login form. Effortlessly access your account.</p>
             <p className="text-[18px] mt-12 font-dmsans text-gray-800">Don't have an account ?<a href="#" className="text- font-semibold hover:underline ml-1"><Link to='/register'>Register Here</Link></a></p>
+            <p className="text-[18px] mt-3 font-dmsans text-gray-800">Go to Home Page -  <a href="#" className="text- font-semibold hover:underline ml-1"><Link to='/'>Home</Link></a></p>
+            
           </div>
 
           <form className="max-w-[480px] bg-slate-50 px-4 py-8 rounded-lg border-slate-300 md:ml-auto w-full">

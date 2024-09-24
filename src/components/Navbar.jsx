@@ -29,7 +29,7 @@ const Navbar = () => {
 
         {/* Navbar links for larger screens */}
         <div className="hidden lg:flex lg:items-center lg:gap-x-10">
-          <a href="javascript:void(0)" className="hover:text-blue-600 transition-colors duration-300 text-[16px] font-bold text-blue-600 block font-firesans uppercase"><Link to='/'>Home</Link></a>
+          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold block font-firesans uppercase"><Link to='/'>Home</Link></a>
 
           {/* Resources Link with Dropdown */}
           <li className='group max-lg:border-b max-lg:py-3 relative list-none'>
@@ -63,10 +63,10 @@ const Navbar = () => {
 
             {/* Profile dropdown */}
             {isProfileDropdownOpen && (
-              <ul className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg">
-                <li className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"><Link to='/profile'>View Profile</Link></li>
-                <li className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"><Link to='/settings'>Settings</Link></li>
-                <li className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer"><Link to='/logout'>Logout</Link></li>
+              <ul className="absolute right-0 mt-3 w-48 bg-white border border-gray-500 shadow-lg">
+                <li className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer border-b-2 border-blue-200 font-poppins"><Link to='/profile'>View Profile</Link></li>
+                <li className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer border-b-2 border-blue-200 font-poppins"><Link to='/settings'>Settings</Link></li>
+                <li className="px-4 py-2 text-slate-900 hover:bg-gray-100 cursor-pointer border-b-2 border-blue-200 font-poppins"><Link to='/logout'>Logout</Link></li>
               </ul>
             )}
           </div>
