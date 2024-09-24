@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import userProfile from '../images/userProfile.png'
+import userprofile from '../images/userProfile.png'
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -55,7 +55,7 @@ const Navbar = () => {
           {/* Profile Component */}
           <div className="relative">
             <button onClick={toggleProfileDropdown} className="flex items-center space-x-2 text-gray-600">
-              <img src={userProfile} alt="Profile" className="w-8 h-8 rounded-full" />
+              <img src={userprofile} alt="Profile" className="w-8 h-8 rounded-full" />
               <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z" />
               </svg>
@@ -118,7 +118,7 @@ const Navbar = () => {
             {/* Profile component in sidebar */}
             <li className="relative">
               <button onClick={toggleProfileDropdown} className="flex items-center space-x-2 font-bold text-gray-600">
-                <img src={userProfile} alt="Profile" className="w-8 h-8 rounded-full" />
+                <img src={userprofile} alt="Profile" className="w-8 h-8 rounded-full" />
                 <span>Profile</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" className="ml-1 inline-block transition-all ease-in-out duration-300 hover:text-[#dc8c4f]" viewBox="0 0 24 24">
                   <path d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z" />
