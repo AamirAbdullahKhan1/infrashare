@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
+import IndiaMap from './components/IndiaMap';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <Home />
+        <IndiaMap/>
         <Features/>
         <Footer />
       </>
