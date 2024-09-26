@@ -1,64 +1,136 @@
-import React, { useEffect } from 'react';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import pinImage from '../images/map.png'; // Adjust path to your image
+import React, { useState } from "react";
 
-const MapComponent = () => {
-  useEffect(() => {
-    const map = L.map('map').setView([22.5937, 78.9629], 5); // Centering map on India
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
-
-    // Define custom pin icon
-    const customIcon = L.icon({
-      iconUrl: pinImage, // Path to your custom image
-      iconSize: [25, 40], // Control the size of the image
-      iconAnchor: [12, 40], // Anchor to make sure it points correctly
-      popupAnchor: [0, -40], // Popup position adjustment
-    });
-
-    const stateCapitals = [
-      {
-        name: 'Delhi',
-        lat: 28.6139,
-        lon: 77.209,
-        info: 'Equipment: 20, Labs: 5, Incubation Centers: 2',
-      },
-      {
-        name: 'Mumbai',
-        lat: 19.076,
-        lon: 72.8777,
-        info: 'Equipment: 15, Labs: 4, Incubation Centers: 3',
-      },
-      // Add more state capitals here
-    ];
-
-    stateCapitals.forEach((state) => {
-      const marker = L.marker([state.lat, state.lon], { icon: customIcon }).addTo(map);
-      marker.bindPopup(`
-        <strong>${state.name}</strong><br>
-        ${state.info}
-      `);
-    });
-
-    return () => {
-      map.remove();
-    };
-  }, []);
+const EquipmentPage = () => {
+  const [showFilters, setShowFilters] = useState(false); // State to toggle filters
+  const [equipmentList] = useState([
+    {
+      id: 1,
+      name: "3D Printer",
+      institution: "ABC University",
+      price: 500,
+      available: true,
+      image: "https://via.placeholder.com/150",
+    },
+    {
+      id: 2,
+      name: "Electron Microscope",
+      institution: "XYZ Research Center",
+      price: 1200,
+      available: false,
+      image: "https://via.placeholder.com/150",
+    },
+    {
+      id: 3,
+      name: "Incubation Chamber",
+      institution: "DEF College",
+      price: 800,
+      available: true,
+      image: "https://via.placeholder.com/150",
+    },
+    // Add more equipment here...
+  ]);
 
   return (
-    <div className="relative h-screen">
-      <div className="absolute top-0 w-full text-center bg-white py-5 z-10">
-        <h2 className="text-3xl font-bold mb-3 text-gray-800">Explore Research Facilities Across India</h2>
-        <p className="text-lg text-gray-600">
-          Hover over the pins to see the equipment availability, labs, and incubation centers in each state.
-        </p>
+    <div className="min-h-screen bg-gray-100">
+      {/* Header */}
+      <header className="flex flex-col items-center py-6">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          Explore Research Equipment
+        </h1>
+        <div className="w-full md:w-2/3 flex items-center border rounded-full px-4 py-2 bg-white shadow-md">
+          <input
+            type="text"
+            placeholder="Search equipment, labs, or institutions..."
+            className="flex-grow px-2 py-1 outline-none"
+          />
+          <button className="ml-2 text-gray-600">
+            <i className="fas fa-search"></i>
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Filters Button */}
+      <div className="block sm:hidden w-full text-center mb-4">
+        <button
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+          onClick={() => setShowFilters(!showFilters)}
+        >
+          {showFilters ? "Hide Filters" : "Show Filters"}
+        </button>
       </div>
-      <div id="map" className="absolute inset-0 z-0"></div>
+
+      {/* Main Content */}
+      <div className="flex flex-col sm:flex-row justify-between px-4 sm:px-6">
+        {/* Sidebar Filters - Visible on Desktop and Collapsible on Mobile */}
+        <aside
+          className={`${
+            showFilters ? "block" : "hidden"
+          } sm:block w-full sm:w-1/4 bg-white p-4 rounded-lg shadow-lg mb-4 sm:mb-0`}
+        >
+          <h3 className="text-xl font-semibold mb-4">Filters</h3>
+          <div>
+            <label className="block text-sm text-gray-600">Category</label>
+            <select className="w-full px-4 py-2 border rounded-lg">
+              <option>All Categories</option>
+              <option>Lab Equipment</option>
+              <option>Incubation Center</option>
+              <option>Research Labs</option>
+            </select>
+          </div>
+          <div className="mt-4">
+            <label className="block text-sm text-gray-600">Availability</label>
+            <select className="w-full px-4 py-2 border rounded-lg">
+              <option>All</option>
+              <option>Available</option>
+              <option>Booked</option>
+            </select>
+          </div>
+        </aside>
+
+        {/* Equipment Grid */}
+        <div className="w-full sm:w-3/4 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-6">
+          {equipmentList.map((equipment) => (
+            <div
+              key={equipment.id}
+              className="bg-white rounded-lg shadow-lg p-4"
+            >
+              <img
+                src={equipment.image}
+                alt={equipment.name}
+                className="w-full h-40 object-cover rounded-lg mb-4"
+              />
+              <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                {equipment.name}
+              </h2>
+              <p className="text-gray-600 mb-2">{equipment.institution}</p>
+              <p className="text-gray-800 font-bold mb-4">
+                ₹{equipment.price} / day
+              </p>
+              <p
+                className={`text-sm ${
+                  equipment.available ? "text-green-500" : "text-red-500"
+                }`}
+              >
+                {equipment.available ? "Available" : "Booked"}
+              </p>
+              <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-500">
+                Book Now
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Pagination */}
+      <div className="flex justify-center items-center py-4">
+        <button className="mx-2 px-3 py-1 bg-gray-300 rounded-lg">
+          Previous
+        </button>
+        <span className="mx-2">Page 1 of 5</span>
+        <button className="mx-2 px-3 py-1 bg-gray-300 rounded-lg">Next</button>
+      </div>
     </div>
   );
 };
 
-export default MapComponent;
+export default EquipmentPage;
