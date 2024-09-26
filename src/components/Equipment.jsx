@@ -14,7 +14,7 @@ const MapComponent = () => {
     // Define custom pin icon
     const customIcon = L.icon({
       iconUrl: pinImage, // Path to your custom image
-      iconSize: [40, 40], // Control the size of the image
+      iconSize: [25, 40], // Control the size of the image
       iconAnchor: [12, 40], // Anchor to make sure it points correctly
       popupAnchor: [0, -40], // Popup position adjustment
     });

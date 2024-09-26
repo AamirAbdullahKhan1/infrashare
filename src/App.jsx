@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import IndiaMap from './components/IndiaMap';
+import Equipment from './components/Equipment';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,16 @@ const router = createBrowserRouter([
       <>
         <Navbar/>
         <Contact/>
+        <Footer/>
+      </>
+    ),
+  },
+  {
+    path: '/equipment',
+    element: (
+      <>
+        <Navbar/>
+        <Equipment/>
         <Footer/>
       </>
     ),
