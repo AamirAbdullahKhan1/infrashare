@@ -31,7 +31,7 @@ const EquipmentPage = () => {
   ]);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500">
       {/* Header */}
       <header className="flex flex-col items-center py-6">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">

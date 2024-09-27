@@ -23,17 +23,17 @@ const Navbar = () => {
     <header className="flex border-b bg-white font-sans min-h-[70px] tracking-wide relative z-50 shadow-md">
       <div className="flex flex-wrap items-center justify-between px-6 py-3 gap-4 w-full">
         {/* Logo */}
-        <a href="javascript:void(0)">
+        <a href="#">
           <p className="text-2xl font-poppins font-semibold text-slate-900"><Link to='/'>INFRASHARE</Link></p>
         </a>
 
         {/* Navbar links for larger screens */}
         <div className="hidden lg:flex lg:items-center lg:gap-x-10">
-          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold block font-firesans uppercase"><Link to='/'>Home</Link></a>
+          <a href="#" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold block font-firesans uppercase"><Link to='/'>Home</Link></a>
 
           {/* Resources Link with Dropdown */}
           <li className='group max-lg:border-b max-lg:py-3 relative list-none'>
-            <a href='javascript:void(0)' className='hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-gray-600 text-[16px] font-bold lg:hover:fill-[#dc8c4f] block font-firesans uppercase'>
+            <a href='#' className='hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-gray-600 text-[16px] font-bold lg:hover:fill-[#dc8c4f] block font-firesans uppercase'>
               Resources
               <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" className="ml-1 inline-block transition-all ease-in-out duration-300 hover:text-[#dc8c4f]" viewBox="0 0 24 24">
                 <path d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z" />
@@ -49,7 +49,7 @@ const Navbar = () => {
             </ul>
           </li>
 
-          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase">About</a>
+          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/about'>About</Link></a>
           <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/contact'>Contact</Link></a>
 
           {/* Profile Component */}
@@ -92,11 +92,11 @@ const Navbar = () => {
             </svg>
           </button>
           <ul className="space-y-6">
-            <li><a href="javascript:void(0)" className="hover:text-blue-600 text-[16px] font-bold text-blue-600 block font-firesans uppercase"><Link to='/'>Home</Link></a></li>
+            <li><a href="#" className="hover:text-blue-600 text-[16px] font-bold text-blue-600 block font-firesans uppercase"><Link to='/'>Home</Link></a></li>
 
             {/* Resources with dropdown in sidebar */}
             <li className="relative" onClick={toggleDropdown}>
-              <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-gray-600 text-[16px] font-bold block font-firesans uppercase">
+              <a href="#" className="hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-gray-600 text-[16px] font-bold block font-firesans uppercase">
                 Resources
                 <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" className="ml-1 inline-block transition-all ease-in-out duration-300 hover:text-[#dc8c4f]" viewBox="0 0 24 24">
                   <path d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z" />
@@ -113,7 +113,7 @@ const Navbar = () => {
               )}
             </li>
 
-            <li><a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/contact'>Contact</Link></a></li>
+            <li><a href="#" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/contact'>Contact</Link></a></li>
 
             {/* Profile component in sidebar */}
             <li className="relative">

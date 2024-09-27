@@ -1,21 +1,11 @@
-import React from 'react';
+import React from 'react'
 import aboutimg from '../images/incubationImg.jpg'
 
-const About = () => {
+const AboutWithout = () => {
   return (
     <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-12 relative overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')] opacity-20"></div>
-
-      {/* Shapes */}
-      <div className="absolute top-10 left-10 md:w-24 md:h-24 w-16 h-16 bg-blue-400 rounded-full opacity-30"></div>
-      <div className="absolute top-20 right-10 md:w-40 md:h-40 w-24 h-24 bg-green-400 opacity-40"></div>
-      <div className="absolute bottom-20 left-20 md:w-32 md:h-32 w-20 h-20 border-4 border-red-500 rounded-full opacity-40"></div>
-      <div className="absolute top-1/3 right-1/4 md:w-16 md:h-16 w-12 h-12 bg-yellow-400 rounded opacity-50"></div>
-      <div className="absolute top-1/4 left-1/3 md:w-24 md:h-24 w-16 h-16 bg-purple-300 rounded-full opacity-25"></div>
-      <div className="absolute bottom-32 right-32 md:w-36 md:h-36 w-24 h-24 bg-pink-500 opacity-30"></div>
-      <div className="absolute bottom-10 left-1/4 md:w-48 md:h-48 w-32 h-32 border-8 border-blue-600 rounded-full opacity-30"></div>
-      <div className="absolute top-2/3 left-1/6 md:w-28 md:h-28 w-20 h-20 bg-orange-400 rounded opacity-50"></div>
+      <div className="absolute inset-0 opacity-20"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}
@@ -87,7 +77,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default AboutWithout

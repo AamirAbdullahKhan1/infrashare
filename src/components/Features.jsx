@@ -2,7 +2,7 @@ import React from 'react'
 
 const Features = () => {
   return (
-    <div className="bg-[#F7F7F7] font-[sans-serif]">
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100 font-[sans-serif]">
       <div className="max-w-6xl mx-auto py-16 px-4">
         <h2 className="text-gray-800 text-4xl font-extrabold text-center mb-16">Discover Our Exclusive Features</h2>
 

@@ -10,6 +10,8 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import IndiaMap from './components/IndiaMap';
 import Equipment from './components/Equipment';
+import About from './pages/About';
+import AboutWithout from './pages/AboutWithout';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,7 @@ const router = createBrowserRouter([
         <Home />
         <IndiaMap/>
         <Features/>
+        <AboutWithout/>
         <Footer />
       </>
     ),
@@ -49,6 +52,16 @@ const router = createBrowserRouter([
     element: (
       <>
         <Login/>
+      </>
+    ),
+  },
+  {
+    path: '/about',
+    element: (
+      <>
+        <Navbar/>
+        <About/>
+        <Footer/>
       </>
     ),
   },

@@ -221,7 +221,7 @@ const MapComponent = () => {
       <div className="absolute top-0 w-full text-center bg-white py-5 z-10">
         <h2 className="text-3xl font-bold mb-3 text-gray-800">Explore Research Facilities Across India</h2>
         <p className="text-lg text-gray-600">
-          Hover over the pins to see the equipment availability, labs, and incubation centers in each state.
+          Click on the pins to see the equipment availability, labs, and incubation centers in each state.
         </p>
       </div>
       <div id="map" className="absolute inset-0 z-0"></div>

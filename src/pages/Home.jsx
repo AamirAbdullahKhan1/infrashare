@@ -24,9 +24,9 @@ const Home = () => {
                   <Link to='/register'>Get Started</Link>
                 </button>
               </div>
-              <div>
-                <button className="w-full flex items-center justify-center px-8 py-3 text-[17px] tracking-wide rounded-md text-white bg-indigo-500 hover:bg-cyan-400 hover:text-black font-dmsans font-semibold transition duration-200 ease-in-out">
-                  Learn More
+              <div> 
+              <button className="w-full flex items-center justify-center px-8 py-3 text-[17px] tracking-wide rounded-md text-white bg-indigo-500 hover:bg-cyan-400 hover:text-black font-dmsans font-semibold transition duration-200 ease-in-out">
+                  <Link to='/about'>Learn More</Link>
                 </button>
               </div>
             </div>
