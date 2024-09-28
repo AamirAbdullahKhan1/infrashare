@@ -5,20 +5,39 @@ import pinImage from '../images/map.png'; // Adjust path to your image
 
 const MapComponent = () => {
   useEffect(() => {
-    const map = L.map('map').setView([22.5937, 78.9629], 5); // Centering map on India
+    // Create the map centered on India with zoom restrictions
+    const map = L.map('map', {
+      center: [22.5937, 78.9629],
+      zoom: 5,
+      minZoom: 4, // Prevent users from zooming out too far
+      maxZoom: 8, // Allow users to zoom in quite close
+      zoomControl: true,
+    });
 
+    // Restrict the map's bounds to focus only on India (approximately)
+    const indiaBounds = [
+      [6.4627, 68.1097],  // South-West coordinates of India
+      [42.5133, 99.3954], // North-East coordinates of India
+    ];
+    map.setMaxBounds(indiaBounds);
+    map.on('drag', function () {
+      map.panInsideBounds(indiaBounds, { animate: false });
+    });
+
+    // Set the tile layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
     // Define custom pin icon
     const customIcon = L.icon({
-      iconUrl: pinImage, // Path to your custom image
-      iconSize: [40, 40], // Control the size of the image
-      iconAnchor: [12, 40], // Anchor to make sure it points correctly
-      popupAnchor: [0, -40], // Popup position adjustment
+      iconUrl: pinImage,
+      iconSize: [40, 40],
+      iconAnchor: [12, 40],
+      popupAnchor: [0, -40],
     });
 
+    // List of state capitals
     const stateCapitals = [
       {
         name: 'Delhi',
@@ -203,6 +222,7 @@ const MapComponent = () => {
       // Add more state capitals here
     ];
 
+    // Add markers for each state capital
     stateCapitals.forEach((state) => {
       const marker = L.marker([state.lat, state.lon], { icon: customIcon }).addTo(map);
       marker.bindPopup(`
@@ -217,14 +237,16 @@ const MapComponent = () => {
   }, []);
 
   return (
-    <div className="relative h-screen">
-      <div className="absolute top-0 w-full text-center bg-white py-5 z-10">
+    <div className="relative h-screen bg-gradient-to-r from-blue-50 to-blue-100">
+      <div className="absolute top-0 w-full text-center bg-gradient-to-r from-blue-50 to-blue-100 py-5 z-10">
         <h2 className="text-3xl font-bold mb-3 text-gray-800">Explore Research Facilities Across India</h2>
         <p className="text-lg text-gray-600">
           Click on the pins to see the equipment availability, labs, and incubation centers in each state.
         </p>
       </div>
-      <div id="map" className="absolute inset-0 z-0"></div>
+
+      {/* The map container */}
+      <div id="map" className="absolute inset-y-0 left-12 right-12 z-0 rounded-lg shadow-xl"></div>
     </div>
   );
 };

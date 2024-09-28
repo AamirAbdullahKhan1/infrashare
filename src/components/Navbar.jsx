@@ -106,9 +106,9 @@ const Navbar = () => {
               {isDropdownOpen && (
                 <ul className="pl-4 space-y-2">
                   <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins"><Link to='/equipment'>Equipments</Link></a></li>
-                  <li className="border-b py-2"><a href="javascript:void(0)" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Research Labs</a></li>
-                  <li className="border-b py-2"><a href="javascript:void(0)" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Incubation Centers</a></li>
-                  <li className="border-b py-2"><a href="javascript:void(0)" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Investment</a></li>
+                  <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Research Labs</a></li>
+                  <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Incubation Centers</a></li>
+                  <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Investment</a></li>
                 </ul>
               )}
             </li>
@@ -129,7 +129,7 @@ const Navbar = () => {
 
               {isProfileDropdownOpen && (
                 <ul className="pl-4 space-y-2">
-                  <li className="border-b py-2"><Link to="/profile" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block">View Profile</Link></li>
+                  <li className="border-b py-2"><Link to="/userprofile" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block">View Profile</Link></li>
                   <li className="border-b py-2"><Link to="/settings" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block">Settings</Link></li>
                   <li className="border-b py-2"><Link to="/logout" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block">Logout</Link></li>
                 </ul>
