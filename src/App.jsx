@@ -12,6 +12,7 @@ import IndiaMap from './components/IndiaMap';
 import Equipment from './components/Equipment';
 import About from './pages/About';
 import AboutWithout from './pages/AboutWithout';
+import UserProfile from './pages/UserProfile';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       </>
     ),
   },
+
   {
     path: '/contact',
     element: (
@@ -37,6 +39,7 @@ const router = createBrowserRouter([
       </>
     ),
   },
+
   {
     path: '/equipment',
     element: (
@@ -47,6 +50,7 @@ const router = createBrowserRouter([
       </>
     ),
   },
+
   {
     path: '/login',
     element: (
@@ -55,12 +59,23 @@ const router = createBrowserRouter([
       </>
     ),
   },
+
   {
     path: '/about',
     element: (
       <>
         <Navbar/>
         <About/>
+        <Footer/>
+      </>
+    ),
+  },
+  {
+    path: '/userprofile',
+    element: (
+      <>
+        <Navbar/>
+        <UserProfile/>
         <Footer/>
       </>
     ),

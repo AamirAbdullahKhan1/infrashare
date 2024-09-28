@@ -33,7 +33,7 @@ const Navbar = () => {
 
           {/* Resources Link with Dropdown */}
           <li className='group max-lg:border-b max-lg:py-3 relative list-none'>
-            <a href='#' className='hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-gray-600 text-[16px] font-bold lg:hover:fill-[#dc8c4f] block font-firesans uppercase'>
+            <a href='#' className='hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-black text-[16px] font-bold lg:hover:fill-[#dc8c4f] block font-firesans uppercase'>
               Resources
               <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" className="ml-1 inline-block transition-all ease-in-out duration-300 hover:text-[#dc8c4f]" viewBox="0 0 24 24">
                 <path d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z" />
@@ -49,8 +49,8 @@ const Navbar = () => {
             </ul>
           </li>
 
-          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/about'>About</Link></a>
-          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/contact'>Contact</Link></a>
+          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-black block font-firesans uppercase"><Link to='/about'>About</Link></a>
+          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-black block font-firesans uppercase"><Link to='/contact'>Contact</Link></a>
 
           {/* Profile Component */}
           <div className="relative">
@@ -64,7 +64,7 @@ const Navbar = () => {
             {/* Profile dropdown */}
             {isProfileDropdownOpen && (
               <ul className="absolute right-0 mt-3 w-48 bg-white border border-gray-500 shadow-lg">
-                <li className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer border-b-2 border-blue-200 font-poppins"><Link to='/profile'>View Profile</Link></li>
+                <li className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer border-b-2 border-blue-200 font-poppins"><Link to='/userprofile'>View Profile</Link></li>
                 <li className="px-4 py-2 text-gray-800 hover:bg-gray-100 cursor-pointer border-b-2 border-blue-200 font-poppins"><Link to='/settings'>Settings</Link></li>
                 <li className="px-4 py-2 text-slate-900 hover:bg-gray-100 cursor-pointer border-b-2 border-blue-200 font-poppins"><Link to='/logout'>Logout</Link></li>
               </ul>
@@ -92,11 +92,11 @@ const Navbar = () => {
             </svg>
           </button>
           <ul className="space-y-6">
-            <li><a href="#" className="hover:text-blue-600 text-[16px] font-bold text-blue-600 block font-firesans uppercase"><Link to='/'>Home</Link></a></li>
+            <li><a href="#" className="hover:text-[#dc8c4f] duration-300 text-[16px] font-bold text-black block font-firesans uppercase"><Link to='/'>Home</Link></a></li>
 
             {/* Resources with dropdown in sidebar */}
             <li className="relative" onClick={toggleDropdown}>
-              <a href="#" className="hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-gray-600 text-[16px] font-bold block font-firesans uppercase">
+              <a href="#" className="hover:text-[#dc8c4f] transition-all ease-in-out duration-300 text-black text-[16px] font-bold block font-firesans uppercase">
                 Resources
                 <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" className="ml-1 inline-block transition-all ease-in-out duration-300 hover:text-[#dc8c4f]" viewBox="0 0 24 24">
                   <path d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z" />
@@ -113,13 +113,15 @@ const Navbar = () => {
               )}
             </li>
 
-            <li><a href="#" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-gray-600 block font-firesans uppercase"><Link to='/contact'>Contact</Link></a></li>
+            <li><a href="#" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-black block font-firesans uppercase"><Link to='/about'>About</Link></a></li>
+
+            <li><a href="#" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-black block font-firesans uppercase"><Link to='/contact'>Contact</Link></a></li>
 
             {/* Profile component in sidebar */}
             <li className="relative">
-              <button onClick={toggleProfileDropdown} className="flex items-center space-x-2 font-bold text-gray-600">
+              <button onClick={toggleProfileDropdown} className="flex items-center space-x-2 font-bold text-black">
                 <img src={userimg} alt="Profile" className="w-8 h-8 rounded-full" />
-                <span>Profile</span>
+                <span><Link to='/userprofile'>Profile</Link></span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" className="ml-1 inline-block transition-all ease-in-out duration-300 hover:text-[#dc8c4f]" viewBox="0 0 24 24">
                   <path d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z" />
                 </svg>
