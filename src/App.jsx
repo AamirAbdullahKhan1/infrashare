@@ -13,6 +13,10 @@ import Equipment from './components/Equipment';
 import About from './pages/About';
 import AboutWithout from './pages/AboutWithout';
 import UserProfile from './pages/UserProfile';
+import AdminPanel from './pages/AdminPanel';
+import Duplicate from './pages/Duplicate';
+import Research from './pages/Research'
+import Incubation from './pages/Incubation'
 
 const router = createBrowserRouter([
   {
@@ -52,6 +56,28 @@ const router = createBrowserRouter([
   },
 
   {
+    path: '/research',
+    element: (
+      <>
+        <Navbar/>
+        <Research/>
+        <Footer/>
+      </>
+    ),
+  },
+
+  {
+    path: '/incubation',
+    element: (
+      <>
+        <Navbar/>
+        <Incubation/>
+        <Footer/>
+      </>
+    ),
+  },
+
+  {
     path: '/login',
     element: (
       <>
@@ -65,7 +91,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <Navbar/>
-        <About/>
+        <Duplicate/>
         <Footer/>
       </>
     ),
@@ -76,6 +102,16 @@ const router = createBrowserRouter([
       <>
         <Navbar/>
         <UserProfile/>
+        <Footer/>
+      </>
+    ),
+  },
+  {
+    path: '/adminpanel',
+    element: (
+      <>
+        <Navbar/>
+        <AdminPanel/>
         <Footer/>
       </>
     ),

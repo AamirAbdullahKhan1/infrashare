@@ -21,7 +21,7 @@ const Home = () => {
             <div className="mt-12 flex max-sm:flex-col sm:justify-center lg:justify-start gap-4">
               <div className="rounded-md shadow">
                 <button className="w-full flex items-center font-semibold justify-center px-8 py-3 text-[17px] tracking-wide rounded-md text-indigo-600 bg-white hover:text-white hover:bg-slate-900 transition duration-150 ease-in-out">
-                  <Link to='/register'>Get Started</Link>
+                  <Link to='/about'>Get Started</Link>
                 </button>
               </div>
               <div> 
