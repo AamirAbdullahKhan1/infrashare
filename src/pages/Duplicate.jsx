@@ -45,7 +45,7 @@ export default function AdminPanel() {
       </div>
 
       {activeTab === "equipment" && (
-        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-sm:mb-[50px]">
+        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-[10px]">
           <h2 className="text-xl font-semibold mb-4">Add/Update Equipment</h2>
           <form onSubmit={handleAddEquipment}>
             <div className="mb-4">
@@ -158,7 +158,7 @@ export default function AdminPanel() {
       )}
 
       {activeTab === "admin" && (
-        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-[210px]">
+        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-[204px]">
           <h2 className="text-xl font-semibold mb-4">Admin Tools</h2>
           <div className="grid grid-cols-2 gap-4">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
