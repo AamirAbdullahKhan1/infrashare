@@ -43,14 +43,14 @@ const Navbar = () => {
             {/* Dropdown menu */}
             <ul className='absolute shadow-lg bg-white space-y-3 lg:top-5 max-lg:top-8 -left-6 min-w-[250px] z-50 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-6 group-hover:pb-4 group-hover:pt-6 transition-all duration-500'>
               <li className='border-b py-2'><a href='#' className='hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins'><Link to='/equipment'>Equipments</Link></a></li>
-              <li className='border-b py-2'><a href='javascript:void(0)' className='hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins'><Link to='/research'>Research</Link></a></li>
-              <li className='border-b py-2'><a href='javascript:void(0)' className='hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins'><Link to='/incubation'>Incubation Centers</Link></a></li>
-              <li className='border-b py-2'><a href='javascript:void(0)' className='hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins'>Investment</a></li>
+              <li className='border-b py-2'><a href='#' className='hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins'><Link to='/research'>Research</Link></a></li>
+              <li className='border-b py-2'><a href='#' className='hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins'><Link to='/incubation'>Incubation Centers</Link></a></li>
+              <li className='border-b py-2'><a href='#' className='hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins'>Investment</a></li>
             </ul>
           </li>
 
-          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-black block font-firesans uppercase"><Link to='/about'>About</Link></a>
-          <a href="javascript:void(0)" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-black block font-firesans uppercase"><Link to='/contact'>Contact</Link></a>
+          <a href="#" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-black block font-firesans uppercase"><Link to='/about'>About</Link></a>
+          <a href="#" className="hover:text-[#dc8c4f] transition-colors duration-300 text-[16px] font-bold text-black block font-firesans uppercase"><Link to='/contact'>Contact</Link></a>
 
           {/* Profile Component */}
           <div className="relative">
