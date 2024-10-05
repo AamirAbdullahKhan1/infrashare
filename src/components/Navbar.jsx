@@ -106,8 +106,8 @@ const Navbar = () => {
               {isDropdownOpen && (
                 <ul className="pl-4 space-y-2">
                   <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins"><Link to='/equipment'>Equipments</Link></a></li>
-                  <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Research Labs</a></li>
-                  <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Incubation Centers</a></li>
+                  <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins"><Link to='/research'>Research Labs</Link></a></li>
+                  <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins"><Link to='/incubation'>Incubation Centers</Link></a></li>
                   <li className="border-b py-2"><a href="#" className="hover:text-[#40b078] transition-all text-gray-600 text-[15px] font-bold block font-poppins">Investment</a></li>
                 </ul>
               )}
